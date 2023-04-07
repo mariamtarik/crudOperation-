@@ -1,0 +1,33 @@
+
+<h1 class="text-center w-25 mx-auto text-white bg-info mt-2 rounded-3 shadow p-2"> All students</h1>
+<table class="table w-75 m-auto border border-info mt-2 text-center border-2 shadow text-white">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">details</th>
+        <th scope="col">delete</th>
+        <th scope="col">update</th>
+
+
+        <!-- <th scope="col">email</th>
+        <th scope="col">phone</th>
+        <th scope="col">age</th> -->
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students">
+        <td>{{s.id}}</td>
+        <td>{{s.name}}</td>
+        <td><a routerLink="/students/{{s.id}}" class="text-info text-decoration-none">details</a></td>
+        <td> <button  class="btn btn-outline-danger"><a (click)="deleteOne(s.id)"  class="text-decoration-none text-white">delete</a></button></td>
+        <td> <button  class="btn btn-outline-warning"><a routerLink="/update/{{s.id}}"  class="text-decoration-none text-white">update</a></button></td>
+
+        <!-- <td>{{s.email}}</td>
+        <td>{{s.phone}}</td>
+        <td>{{s.age}}</td> -->
+
+      </tr>
+    </tbody>
+  </table>

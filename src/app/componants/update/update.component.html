@@ -1,0 +1,55 @@
+
+  <div class="content w-75 mx-auto mt-2">
+  <form *ngIf="student ;else loading" [formGroup]="updateForm">
+    <h3 class="text-center pt-2">Rgisteration Form</h3>
+    <label for="firstName" class="form-label">First Name</label>
+    <input formControlName="name" type="text" class="form-control mb-2" id="firstName">
+    <div *ngIf='updateForm.get("name")?.errors !=null&&updateForm.get("name")?.touched'>
+        <span *ngIf="updateForm.get('name')?.errors?.['required']"  class="text-danger "> name is required</span>
+        <span *ngIf="updateForm.get('name')?.errors?.['minlength']"  class="text-danger "> name is minlength 3</span>
+        <span *ngIf="updateForm.get('name')?.errors?.['maxlength']"  class="text-danger "> name is manlength 10</span>
+
+       
+    </div>
+ 
+    <label for="age" class="form-label">Age</label>
+    <input formControlName="age"  type="number" class="form-control mb-2" id="age" >
+    <div *ngIf='updateForm.get("age")?.errors !=null&&updateForm.get("age")?.touched'>
+        <span *ngIf="updateForm.get('age')?.errors?.['required']"  class="text-danger "> age is required</span>
+        <span *ngIf="updateForm.get('age')?.errors?.['min']"  class="text-danger "> age is min 16</span>
+        <span *ngIf="updateForm.get('age')?.errors?.['max']"  class="text-danger "> age is max 60</span>
+
+       
+    </div>
+
+    <label for="email" class="form-label">Email</label>
+    <input formControlName="email"   type="email" class="form-control mb-2" id="email" >
+    <div *ngIf='updateForm.get("email")?.errors !=null&&updateForm.get("email")?.touched'>
+        <span *ngIf='updateForm.get("email")?.errors?.["required"]'  class="text-danger ">email is required</span>
+        <span *ngIf='updateForm.get("email")?.errors?.["email"]'  class="text-danger ">email in invalied</span>
+     
+    </div>
+    
+    <label for="phone" class="form-label">phone</label>
+    <input formControlName="phone"  type="phone" class="form-control mb-2" id="phone" >
+    <div *ngIf='updateForm.get("phone")?.errors !=null&&updateForm.get("phone")?.touched'>
+        <span *ngIf='updateForm.get("phone")?.errors?.["required"]'  class="text-danger ">phone is required</span>
+      
+     
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger">
+        <p class="text-center ">{{error}}</p>
+           </div>
+
+  <div class="ctr"> 
+    <button  class="btn py-2 px-4" (click)="update()">UPDATE</button>
+
+  </div>
+</form>
+      <ng-template #loading>
+l           loading
+      </ng-template> 
+
+
+</div>

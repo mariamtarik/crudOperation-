@@ -1,0 +1,55 @@
+
+  <div class="content w-75 mx-auto mt-2 rounded-2 shadow">
+    <form action="" method="get" [formGroup]="addForm" (ngSubmit)="Show()">
+        <h3 class="text-center pt-3">Add New Student</h3>
+        <label for="firstName" class="form-label">First Name</label>
+        <input formControlName="name" type="text" class="form-control mb-2" id="firstName" placeholder="Enter your first Name">
+        <div *ngIf='addForm.get("name")?.errors !=null&&addForm.get("name")?.touched'>
+            <span *ngIf="addForm.get('name')?.errors?.['required']"  class="text-danger "> name is required</span>
+            <span *ngIf="addForm.get('name')?.errors?.['minlength']"  class="text-danger "> name is minlength 3</span>
+            <span *ngIf="addForm.get('name')?.errors?.['maxlength']"  class="text-danger "> name is manlength 10</span>
+
+           
+        </div>
+     
+        <label for="age" class="form-label">Age</label>
+        <input formControlName="age" type="number" class="form-control mb-2" id="age" placeholder="Enter your Age">
+        <div *ngIf='addForm.get("age")?.errors !=null&&addForm.get("age")?.touched'>
+            <span *ngIf="addForm.get('age')?.errors?.['required']"  class="text-danger "> age is required</span>
+            <span *ngIf="addForm.get('age')?.errors?.['min']"  class="text-danger "> age is min 16</span>
+            <span *ngIf="addForm.get('age')?.errors?.['max']"  class="text-danger "> age is max 60</span>
+
+           
+        </div>
+    
+        <label for="email" class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-control mb-2" id="email" placeholder="Enter your email ">
+        <div *ngIf='addForm.get("email")?.errors !=null&&addForm.get("email")?.touched'>
+            <span *ngIf='addForm.get("email")?.errors?.["required"]'  class="text-danger ">email is required</span>
+            <span *ngIf='addForm.get("email")?.errors?.["email"]'  class="text-danger ">email in invalied</span>
+         
+        </div>
+        
+        <label for="phone" class="form-label">phone</label>
+        <input formControlName="phone" type="phone" class="form-control mb-2" id="phone" placeholder="Enter your email ">
+        <div *ngIf='addForm.get("phone")?.errors !=null&&addForm.get("phone")?.touched'>
+            <span *ngIf='addForm.get("phone")?.errors?.["required"]'  class="text-danger ">phone is required</span>
+          
+         
+        </div>
+   <div *ngIf="success" class="alert alert-success">
+<p class="text-center ">{{success}}</p>
+   </div>
+   <div *ngIf="error" class="alert alert-danger">
+    <p class="text-center ">{{error}}</p>
+       </div>
+
+ 
+      <div class="ctr"> 
+        <button type="submit" class="btn py-2 px-4  ">ADD</button>
+
+      </div>
+
+    </form>
+  </div>
+

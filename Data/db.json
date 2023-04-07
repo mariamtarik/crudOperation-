@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "name": "mar",
+      "age": 27,
+      "email": "mariam@gmail.com",
+      "phone": "0444444",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Mai",
+      "age": 23,
+      "email": "mai@gmail.com",
+      "phone": "0555555"
+    },
+    {
+      "name": "remm",
+      "email": "sama@gmail.com",
+      "age": 33,
+      "phone": "123456",
+      "id": 6
+    },
+    {
+      "name": "mariam",
+      "age": 23,
+      "email": "mariamtarik799@gmail.com",
+      "phone": "01069509799",
+      "id": 7
+    },
+    {
+      "name": "Ahmed",
+      "age": 23,
+      "email": "reemtarik799@gmail.com",
+      "phone": "01069509799",
+      "id": 8
+    },
+    {
+      "name": "Ahmed",
+      "age": 29,
+      "email": "Ahmed@gmail.com",
+      "phone": "01069509799",
+      "id": 9
+    }
+  ]
+}
